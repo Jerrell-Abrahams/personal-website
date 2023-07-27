@@ -1,0 +1,346 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: black;
+}
+
+.main_section {
+    background-color: black;
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.name_container {
+    position: relative;
+    bottom: 3rem;
+}
+
+.main_heading {
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    
+}
+
+.sub_heading {
+    color: gray;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume_button {
+    background-color: rgb(61, 149, 65);
+    font-size: 1rem;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    color: white;
+    border-radius: .5rem;
+    margin: 2rem auto
+}
+
+.resume_button:hover {
+    background-color: rgb(20, 117, 25);
+    transform: translateY(1px);
+    box-shadow: rgba(231, 230, 230, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.profile_section {
+    width: 100%;
+    height: 50dvh;
+    background-color: black;
+}
+
+.profile_container {
+    max-width: 80%;
+    height: fit-content;
+    margin: 0 auto;
+    background-color: #151315;
+    border-radius: 30px
+}
+
+.my_picture {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    opacity: .7;
+    box-shadow: rgb(76, 73, 73) 1px 1px 20px;
+    margin: 2rem;
+    transform: scale(.9);
+}
+
+.left_section {
+    display: flex;
+}
+
+.about_me_container {
+    display: block;
+    margin: 3rem 0;
+    color: whitesmoke;
+    width: 100%
+    
+}
+
+.about_me_container h1, .skills_heading, .projects_container h1 {
+    font-size: 4rem;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 1rem;
+    color: white
+}
+
+.about_me_container p {
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 80%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #666166;
+}
+
+.skills_section {
+    background-color: black;
+    width: 100%;
+    height: 50dvh;
+}
+
+.skills_container {
+    background-color: #151315;
+    width: 80%;
+    height: fit-content;
+    margin: 20rem auto;
+    border-radius: 30px;
+    padding: 2rem 0
+}
+
+.skills_heading {
+    width: 60%;
+    margin: 1rem auto
+}
+
+.skill {
+    font-family: "Ubuntu";
+    font-size: 1rem;
+    border-radius: 3px;
+    margin: 1rem;
+    width: 60%;
+    height: 2rem;
+    background-color: #666166;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem auto
+}
+
+.skill p {
+    position: absolute;
+    margin: 0 1rem
+}
+
+.skill span {
+    margin: 0 1rem
+}
+
+.skill_fill {
+    position: relative;
+    height: 2rem;
+    background-color: rgb(20, 114, 70);
+}
+
+
+.projects_container {
+    margin: 30rem auto;
+    width: 90%; 
+    height: fit-content;
+    border-radius: 30px;
+    background-color: #151315;
+
+}
+
+.card {
+    margin: 1rem
+}
+
+.card img {
+    width: 30rem;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+    transition: .5s ease-in-out;
+    overflow: hidden;
+    border-radius: 10px
+}
+
+.card_container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem
+}
+
+.card img:hover {
+    filter: blur(5px)
+
+}
+
+
+.card_buttons_container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -6rem;
+    opacity: 1;
+    transition: 1s all
+}
+
+.project_name {
+
+    position: relative;
+    text-align: center;
+    top: -12rem;
+    color: white;
+    opacity: 0;
+    font-size: 2rem;
+    font-family: "Ubuntu";
+    transition: .5s all
+}
+
+img:hover + .project_name {
+    opacity: 1
+}
+
+.card_button {
+    font-size: 1rem;
+    width: max-content;
+    padding: 0 1rem;
+    height: 2rem;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    margin: 1rem;
+    
+    
+}
+
+
+
+.card_button:hover + .card_buttons_container {
+    transform: translateY(2px);
+    background-color: black;
+    transition: .5s;
+    color: white;
+}
+
+.card_button:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(1px);
+    transition: .2s
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 12px;
+    }
+ }
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+    .left_section {
+        display: block;
+        text-align: center;
+    }
+    .about_me_container p {
+        margin: 1rem auto;
+        padding-bottom: 2rem;
+    }
+ }
+
+@media all and (max-width: 480px) {
+    html {
+        font-size: 10px;
+    }
+    .left_section {
+        display: block;
+        text-align: center;
+    }
+    .about_me_container p {
+        margin: 1rem auto;
+        padding: 2rem
+    }
+    .card_container {
+        flex-wrap: wrap;
+    }
+
+ }
+
+ @media all and (max-width: 310px) {
+    html {
+        font-size: 8px;
+        
+    }
+    .left_section {
+        display: block;
+        text-align: center;
+    }
+    .about_me_container p {
+        margin: 1rem auto;
+        padding-bottom: 2rem;
+    }
+ }
+
+
