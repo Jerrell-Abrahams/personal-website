@@ -5,10 +5,38 @@ const my_picture = document.querySelector(".my_picture")
 const main_section = document.querySelector(".main_section")
 const root = document.querySelector(":root")
 const skills = document.querySelectorAll(".skill_fill")
+const modal = document.querySelectorAll("[data-open-modal]")
+const dialog = document.querySelectorAll("[data-modal]");
+const modal_image = document.querySelector(".preview_image")
+const close_button = document.querySelectorAll(".close_button")
 
 
 
 
+
+for (project of modal) {
+    project.addEventListener("click", (e) => {
+        let Modal = document.querySelector("." + e.target.title)
+        Modal.showModal()
+
+        for (let closeButton of close_button) {
+            closeButton.addEventListener("click", (e) => {
+                Modal.close()
+            })
+        }
+
+    })
+    
+}
+
+// modal.forEach(modal => {
+//     modal.addEventListener("click", (event) => {
+//         dialog.forEach(dialog => {
+//             dialog.showModal()
+//         })
+
+//     })
+// })
 
 function checkboxFunction() {
     if (!toggle_button.checked) {

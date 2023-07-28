@@ -256,23 +256,90 @@ body {
 }
 
 .card {
+
     margin: 1rem
 }
 
+dialog {
+    border: none;
+    width: 70%;
+    height: fit-content;
+    margin: auto;
+    background-color: var(--accent_dark_color);
+    outline: none;
+    border-radius: 30px;
+    color: var(--primary_font_color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    overflow: auto;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.695);
+}
+
+.modal_container {
+    width: 90%;
+    margin: 2rem auto;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary_font_color)
+}
+
+.modal_container p {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+}
+
+
+.preview_container {
+    margin: 3rem 0;
+}
+
+.preview_container img {
+    margin: 1rem 0;
+    width: 25rem;
+    height: auto;
+    border-radius: 10px;
+
+}
+.tech_container {
+    margin: 2rem 0;
+}
+
+ol {
+    margin: 1rem 2.5rem;
+}
+
+.modal_heading {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0
+}
+
+.fa-light {
+    width: 30px;
+    height: 30px
+}
+
+
+
+
 .card img {
+    position: relative;
     width: 100%;
     height: auto;
     object-fit: cover;
     margin: 0 auto;
     transition: .5s ease-in-out;
     overflow: hidden;
-    border-radius: 10px
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .card_container {
     display: flex;
     justify-content: space-evenly;
-    margin: 1rem
+    margin: 1rem;
 }
 
 .card img:hover {
@@ -290,7 +357,7 @@ body {
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -7rem;
+    top: -10rem;
     opacity: 1;
     transition: 1s all
 }
@@ -298,7 +365,9 @@ body {
 .project_name {
     position: relative;
     text-align: center;
-    top: -12rem;
+    top: -50%;
+    left: 0;
+    margin: auto;
     color: var(--primary_font_color);
     opacity: 0;
     font-size: 2rem;
@@ -309,6 +378,11 @@ body {
 
 img:hover + .project_name {
     opacity: 1
+}
+
+.project_subheading {
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card_button {
@@ -650,6 +724,9 @@ ul {
     .projects_container {
         width: 100%
     }
+    dialog {
+        width: 90%;
+    }
 
  }
 
@@ -674,6 +751,9 @@ ul {
     }
     .skill {
         width: 75%;
+    }
+    dialog {
+        width: 90%;
     }
  }
 
