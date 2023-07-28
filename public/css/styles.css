@@ -10,12 +10,19 @@
     --primary_dark_color: black;
     --accent_dark_color: #151315;
     --primary_font_color: white;
-    --accent_font_color: #666166;
+    --accent_font_color: #474447;
     --primary_button_color: rgb(35, 34, 34);
 
 }
 
+.animate {
+    transform: translateX(-100%);
+    transition: 3s ease-in-out;
+}
 
+.animate_in {
+    transform: translateX(0);
+}
 
 html {
     font-size: 16px;
@@ -173,14 +180,15 @@ body {
     margin: 1rem;
     color: var(--primary_font_color);
 
+
 }
 
 .about_me_container p { 
     font-size: 1.5rem;
     margin: 1rem;
-    width: 80%;
+    width: 75%;
     font-family: 'Ubuntu', sans-serif;
-    color: #c9c6c9;
+    color: #575157;
 }
 
 .skills_section {
@@ -218,7 +226,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem auto
+    margin: 1rem auto;
+    overflow: hidden;
 }
 
 .skill p {
@@ -382,7 +391,7 @@ img:hover + .project_name {
     padding: 1rem 1rem; 
     background-color: transparent;
     font-size: 1.2rem;
-    color: var(--primary_dark_color);
+    color: black;
     margin: 0 2rem;
     border: black 2px solid;
     border-radius: 3px;
@@ -617,8 +626,9 @@ ul {
     .card_container {
         flex-wrap: wrap;
     }
-    .hidden {
-        position: static;
+
+    .about_me_container h1, .skills_heading, .project_heading, .contact_heading {
+        text-align: center;
     }
  }
 
@@ -659,7 +669,12 @@ ul {
     .projects_container {
         width: 100%
     }
-
+    .about_me_container h1, .skills_heading, .project_heading, .contact_heading {
+        text-align: center;
+    }
+    .skill {
+        width: 75%;
+    }
  }
 
 

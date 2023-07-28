@@ -4,7 +4,7 @@ const titles = document.querySelectorAll(".title")
 const my_picture = document.querySelector(".my_picture")
 const main_section = document.querySelector(".main_section")
 const root = document.querySelector(":root")
-
+const skills = document.querySelectorAll(".skill_fill")
 
 
 
@@ -14,7 +14,7 @@ function checkboxFunction() {
     if (!toggle_button.checked) {
         main_section.style.setProperty("background-image", "url(../images/white_background.jpg)")
         root.style.setProperty("--primary_dark_color", "rgb(250, 250, 250)");
-        root.style.setProperty("--accent_dark_color", "rgb(124, 124, 124)");
+        root.style.setProperty("--accent_dark_color", "rgb(204, 204, 204)");
         root.style.setProperty("--primary_font_color", "black");
         root.style.setProperty("--accent_font_color", "rgb(220, 220, 220)")
         root.style.setProperty("--primary_button_color", "white")
@@ -30,15 +30,34 @@ function checkboxFunction() {
         }
     }
     else {
+
         root.style.setProperty("--primary_dark_color", "black");
         root.style.setProperty("--accent_dark_color", "#151315");
-        root.style.setProperty("--primary_font_color", "white");
+        root.style.setProperty("--primary_font_color", "black");
         root.style.setProperty("--accent_font_color", "#666166")
+        root.style.setProperty("--primary_button_color", "black")
         main_section.style.removeProperty("background-image")
     }
 }
 
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+
+        
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animate_in"); 
+        }
+        else {
+            return
+        }
+    })
+    
+})
+
+skills.forEach((entry) => {
+    observer.observe(entry)
+})
 
 
 
