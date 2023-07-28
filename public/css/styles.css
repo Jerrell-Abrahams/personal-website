@@ -3,20 +3,79 @@
     margin: 0;
     padding: 0;
 
+
 }
+
+:root {
+    --primary_dark_color: black;
+    --accent_dark_color: #151315;
+    --primary_font_color: white;
+    --accent_font_color: #666166;
+    --primary_button_color: rgb(35, 34, 34);
+
+}
+
+
 
 html {
     font-size: 16px;
 }
 
 body {
-    background-color: black;
+    background-color: var(--primary_dark_color);
+
 }
 
+#toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 3.2rem;
+    height: 2rem;
+    border-radius: 30px;
+    background-color: #333;
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  /* Making a dot switch inside the Toggle Button */
+  #toggle::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #EEE;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: all 0.5s ease-in;
+  }
+  
+  /* Changing toggle button background when checked */
+  #toggle:checked {
+    background: rgb(61, 149, 65);
+  }
+  
+  /* Changing dot switch color and moving to the right side when checked */
+  #toggle:checked::before {
+    background: #000000;
+    left: 1.5rem;
+  }
+
+
+
+
+
 .main_section {
-    background-color: black;
+    background-color: var(--primary_dark_color);
     height: 100dvh;
     width: 100%;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +89,7 @@ body {
 }
 
 .main_heading {
-    color: white;
+    color: var(--primary_font_color);
     font-size: 6rem;
     text-align: center;
     font-family: 'Barlow Condensed', sans-serif;
@@ -53,13 +112,13 @@ body {
 .resume_button {
     background-color: rgb(61, 149, 65);
     font-size: 1rem;
-
     width: 10rem;
     height: 3rem;
     border: none;
     color: white;
     border-radius: .5rem;
-    margin: 2rem auto
+    margin: 2rem auto;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .resume_button:hover {
@@ -73,7 +132,7 @@ body {
 .profile_section {
     width: 100%;
     height: fit-content;
-    background-color: black;
+    background-color: var(--primary_dark_color);
     margin: 2rem 0
 }
 
@@ -81,7 +140,7 @@ body {
     width: 90%;
     height: fit-content;
     margin: 0 auto;
-    background-color: #151315;
+    background-color: var(--accent_dark_color);
     border-radius: 30px
 }
 
@@ -91,7 +150,7 @@ body {
     height: 25rem;
     border-radius: 50%;
     opacity: .7;
-    box-shadow: rgb(76, 73, 73) 1px 1px 20px;
+    box-shadow: rgb(63, 69, 63) 1px 1px 20px;
     margin: 2rem;
     transform: scale(.9);
 }
@@ -103,7 +162,7 @@ body {
 .about_me_container {
     display: block;
     margin: 3rem 0;
-    color: whitesmoke;
+    color: var(--primary_font_color)smoke;
     width: 100%
     
 }
@@ -112,32 +171,33 @@ body {
     font-size: 4rem;
     font-family: 'Ubuntu', sans-serif;
     margin: 1rem;
-    color: white;
+    color: var(--primary_font_color);
 
 }
 
-.about_me_container p {
+.about_me_container p { 
     font-size: 1.5rem;
     margin: 1rem;
     width: 80%;
     font-family: 'Ubuntu', sans-serif;
-    color: #666166;
+    color: #c9c6c9;
 }
 
 .skills_section {
-    background-color: black;
+    background-color: var(--primary_dark_color);
     width: 100%;
     height: fit-content;
 
 }
 
 .skills_container {
-    background-color: #151315;
+    background-color: var(--accent_dark_color);
     width: 90%;
     height: fit-content;
     margin: 10rem auto;
     border-radius: 30px;
-    padding: 2rem 0
+    padding: 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .skills_heading {
@@ -182,7 +242,7 @@ body {
     width: 90%; 
     height: fit-content;
     border-radius: 30px;
-    background-color: #151315;
+    background-color: var(--accent_dark_color);
 
 }
 
@@ -230,7 +290,7 @@ body {
     position: relative;
     text-align: center;
     top: -12rem;
-    color: white;
+    color: var(--primary_font_color);
     opacity: 0;
     font-size: 2rem;
     font-family: "Ubuntu";
@@ -248,10 +308,10 @@ img:hover + .project_name {
     width: max-content;
     padding: 0 2rem;
     height: 2.5rem;
-    background-color: rgb(35, 34, 34);
+    background-color: var(--primary_button_color);
     border: none;
     border-radius: 3px;
-    color: white;
+    color: var(--primary_font_color);
     margin: 1rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     cursor: pointer;
@@ -259,14 +319,14 @@ img:hover + .project_name {
 }
 .card_button:hover + .card_buttons_container {
     transform: translateY(2px);
-    background-color: black;
+    background-color: var(--primary_dark_color);
     transition: .5s;
-    color: white;
+    color: var(--primary_font_color);
 }
 
 .card_button:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--primary_font_color);
+    color: var(--primary_dark_color);
     transform: translateY(1px);
     transition: .2s;
     cursor: pointer;
@@ -277,7 +337,6 @@ img:hover + .project_name {
     background-color: white;
     width: 100%;
     height: auto;
-
     position: relative;
     overflow: hidden;
 }
@@ -323,7 +382,7 @@ img:hover + .project_name {
     padding: 1rem 1rem; 
     background-color: transparent;
     font-size: 1.2rem;
-    color: black;
+    color: var(--primary_dark_color);
     margin: 0 2rem;
     border: black 2px solid;
     border-radius: 3px;
@@ -341,7 +400,7 @@ img:hover + .project_name {
 .call_button:hover {
     transform: translateY(1px);
     background-color: rgb(12, 12, 217);
-    color: white;
+    color: var(--primary_font_color);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     cursor: pointer;
 
