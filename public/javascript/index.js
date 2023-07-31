@@ -58,13 +58,13 @@ function checkboxFunction() {
         }
     }
     else {
-
         root.style.setProperty("--primary_dark_color", "black");
         root.style.setProperty("--accent_dark_color", "#151315");
-        root.style.setProperty("--primary_font_color", "black");
+        root.style.setProperty("--primary_font_color", "white");
         root.style.setProperty("--accent_font_color", "#666166")
         root.style.setProperty("--primary_button_color", "black")
         main_section.style.removeProperty("background-image")
+
     }
 }
 
