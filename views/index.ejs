@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerrell Abrahams</title>
+    <link rel="icon" type="image/x-icon" href="../images/binary-code.png">
     <link rel="stylesheet" href="../css/styles.css">
 
     <!-- fonts -->
@@ -16,7 +17,7 @@
     <script defer src="../javascript/index.js"></script>
 </head>
 <body>
-    
+    <div class="scroll-indicator"></div>
     <nav class="navbar">
         <div class="theme_checkbox">
             <input type="checkbox" id="toggle" class="toggle_button" onclick="checkboxFunction()" checked>
@@ -26,7 +27,7 @@
         <div>
             <div class="name_container">
                 <h1 class="main_heading">Jerrell Abrahams</h1>
-                <h4 class="sub_heading">Junior Web Developer</h4>
+                <h4 class="sub_heading">Junior Full Stack Developer</h4>
                 <div class="button_container">
                     <a href="https://flowcv.com/resume/ljur7etg36" target="_blank"><button class="resume_button">Resume</button></a>
                 </div>
@@ -98,7 +99,7 @@
                 </div>
                 <div class="skill">
                     <div class="skill_fill animate" style="width: 95%"></div>
-                    <p>Computer hardware/Software</p>
+                    <p>Computer Hardware/Software</p>
                     <span>95%</span>
                 </div>
                 <div class="skill">
@@ -123,6 +124,7 @@
             <div class="preview_container">
                 <h3>Preview:</h3>
                 <img class="prview_image" src="../images/future_email_project.png" alt="A preview of the website">
+                <img class="prview_image" src="../images/preivew_of_future_me.png" alt="A preview of the website">
             </div>
             <div class="tech_container">
                 <h3>Technologies used:</h3>
@@ -132,6 +134,7 @@
                     <li>HTML & CSS</li>
                     <li>MongoDB</li>
                     <li>Git</li>
+                    <li>EJS</li>
                 </ol>
             </div>
         </div>
@@ -148,6 +151,8 @@
             <div class="preview_container">
                 <h3>Preview:</h3>
                 <img class="prview_image" src="../images/gym_company_redo_website.png" alt="A preview of the website">
+                <img class="prview_image" src="../public/images/preview_gym_company.png" alt="A preview of the website">
+
             </div>
             <div class="tech_container">
                 <h3>Technologies used:</h3>
@@ -157,6 +162,35 @@
                     <li>HTML & CSS</li>
                     <li>MongoDB</li>
                     <li>Git</li>
+                    <li>EJS</li>
+                </ol>
+            </div>
+        </div>
+    </dialog>
+
+
+    <dialog data-modal class="modal mp3_downloader">
+        <div class="modal_container">
+            <div class="modal_heading"> 
+            <h1>Mp3 Music Downloader</h1>
+            <i class="fa fa-close close_button" aria-hidden="true"></i>
+        </div>
+            <p>A simple mp3 Music downloader that queries youtube API to find videoID, which is then used to download a 128kbps song.</p>
+
+            <div class="preview_container">
+                <h3>Preview:</h3>
+                <img class="prview_image" src="../images/preview_mp3_website.png" alt="A preview of the website">
+            </div>
+            <div class="tech_container">
+                <h3>Technologies used:</h3>
+                <ol>
+                    <li>ExpressJS</li>
+                    <li>Javascript</li>
+                    <li>HTML & CSS</li>
+                    <li>YouTube API</li>
+                    <li>Git</li>
+                    <li>RapidAPI</li>
+                    <li>EJS</li>
                 </ol>
             </div>
         </div>
@@ -179,15 +213,30 @@
                     <a href="https://github.com/Jerrell-Abrahams/future-email" target="_blank"><button class="card_button">Source Code</button></a>
             </div>
             </div>
+            <div  class="card">
+                <img data-open-modal src="../images/mp3-website-screenshot.png" alt="" title="mp3_downloader">
+
+                    <h1 class="project_name">Mp3 Music Downloader<br><span class="project_subheading">Click to see more about project!</span></h1>
+
+
+                <div class="card_buttons_container">
+                    <a href="https://mp3-music-downloader.onrender.com" target="_blank"><button class="card_button">Live Demo</button></a>
+                    <a href="https://github.com/Jerrell-Abrahams/mp3-downloader-website" target="_blank"><button class="card_button">Source Code</button></a>
+            </div>
+            </div>
+
             <div class="card">
                 <img data-open-modal src="../images/gym_company_redo_website.png" alt="" title="gym_company">
                 <h1 class="project_name">Gym Company Redo Website<br><span class="project_subheading">Click to see more about project!</span></h1>
                 <div class="card_buttons_container">
-                    <a href="https://gym-company-redo.onrender.com"><button class="card_button">Live Demo</button></a>
+                    <a href="https://gym-company-redo.onrender.com" target="_blank"><button class="card_button">Live Demo</button></a>
                     <a href="https://github.com/Jerrell-Abrahams/gym-company-redo" target="_blank"><button class="card_button">Source Code</button></a>
             </div>
             </div>
+
+            
         </div>
+        <p class="disclaimer">** <em>Live Demos</em> websites take time to load as it is hosted on a free tier.</p>
         </div>
     </section>
 
@@ -208,8 +257,8 @@
                       </a>
                     </li>
                     <li>
-                      <a class="twitter" href="#">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      <a class="twitter" href="https://www.linkedin.com/in/jerrell-abrahams">
+                        <i class="fa fa-linkedin"></i>
                       </a>
                     </li>
                     <li>

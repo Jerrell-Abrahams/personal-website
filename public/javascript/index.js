@@ -9,9 +9,17 @@ const modal = document.querySelectorAll("[data-open-modal]")
 const dialog = document.querySelectorAll("[data-modal]");
 const modal_image = document.querySelector(".preview_image")
 const close_button = document.querySelectorAll(".close_button")
+const bar = document.querySelector(".scroll-indicator");
 
 
 
+window.onscroll = () => {
+	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	let scrolled = (winScroll / height) * 100;
+	
+	bar.style.width = scrolled + "%";
+};
 
 
 for (project of modal) {
