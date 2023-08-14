@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(3000 || "192.168.100.4", () => {
   console.log(`Example app listening on port ${port}`)
 })

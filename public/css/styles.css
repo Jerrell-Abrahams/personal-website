@@ -26,12 +26,12 @@
 }
 
 .animate {
-    transform: translateX(-100%);
-    transition: 3s ease-in-out;
+    -webkit-transform: translateX(-100%);
+    -webkit-transition: 3s ease-in-out;
 }
 
 .animate_in {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
 }
 
 html {
@@ -113,9 +113,6 @@ body {
     font-size: 6rem;
     text-align: center;
     font-family: 'Barlow Condensed', sans-serif;
-
-
-    
 }
 
 .sub_heading {
@@ -248,13 +245,14 @@ body {
     align-items: center;
     margin: 1rem auto;
     overflow: hidden;
-    ;
+
+    
 }
 
 .skill p {
     position: absolute;
     margin: 0 1rem;
-    z-index: 2;
+
 
 }
 
@@ -692,11 +690,24 @@ ul {
   }
 
 
-@media all and (min-width: 1024px) and (max-width: 1280px) {}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    .skill p {
+        z-index: 3;
+    }
+    .skill_fill {
+        z-index: 2;
+    }
+}
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
     html {
         font-size: 12px;
+    }
+    .skill p {
+        z-index: 3;
+    }
+    .skill_fill {
+        z-index: 2;
     }
  }
 
@@ -718,6 +729,14 @@ ul {
 
     .about_me_container h1, .skills_heading, .project_heading, .contact_heading {
         text-align: center;
+    }
+
+    .skill p {
+        z-index: 3;
+    }
+
+    .skill_fill {
+        z-index: 2;
     }
  }
 
@@ -742,6 +761,18 @@ ul {
     dialog {
         width: 90%;
     }
+    .skill p {
+        z-index: 3;
+    }
+    .skill_fill {
+        z-index: 2;
+    }
+    .skill {
+        width: 90%
+    }
+    .skills_heading {
+        width: 90%
+    }
 
  }
 
@@ -764,11 +795,20 @@ ul {
     .about_me_container h1, .skills_heading, .project_heading, .contact_heading {
         text-align: center;
     }
-    .skill {
-        width: 75%;
-    }
     dialog {
         width: 90%;
+    }
+    .skill p {
+        z-index: 3;
+    }
+    .skill_fill {
+        z-index: 2;
+    }
+    .skill {
+        width: 90%
+    }
+    .skills_heading {
+        width: 90%
     }
  }
 
