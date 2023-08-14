@@ -37,15 +37,6 @@ for (project of modal) {
     
 }
 
-// modal.forEach(modal => {
-//     modal.addEventListener("click", (event) => {
-//         dialog.forEach(dialog => {
-//             dialog.showModal()
-//         })
-
-//     })
-// })
-
 function checkboxFunction() {
     if (!toggle_button.checked) {
         main_section.style.setProperty("background-image", "url(../images/white_background.jpg)")
@@ -79,8 +70,6 @@ function checkboxFunction() {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-
-        
         if (entry.isIntersecting) {
             entry.target.classList.add("animate_in"); 
         }
@@ -94,25 +83,4 @@ const observer = new IntersectionObserver((entries) => {
 skills.forEach((entry) => {
     observer.observe(entry)
 })
-
-
-
-// const sections = document.querySelectorAll("section");
-
-// window.onscroll = () => {
-//     console.log(window.scrollY)
-//     sections.forEach(sec => {
-//         let top = window.scrollY;
-//         let offset = sec.offsetTop;
-//         let height = sec.offsetHeight;
-
-//         if (top >= offset && top < offset + height) {
-//             sec.classList.add("show")
-//         }
-//         else {
-//             sec.classList.remove("show")
-//         }
-//     })
-// }
-
 

@@ -248,11 +248,14 @@ body {
     align-items: center;
     margin: 1rem auto;
     overflow: hidden;
+    ;
 }
 
 .skill p {
     position: absolute;
-    margin: 0 1rem
+    margin: 0 1rem;
+    z-index: 2;
+
 }
 
 .skill span {
@@ -264,6 +267,7 @@ body {
     height: 2rem;
     background-color: rgb(84, 240, 214);
     border-radius: 3px;
+    z-index: 1;
 }
 
 
