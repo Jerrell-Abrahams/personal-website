@@ -12,6 +12,7 @@
     --primary_font_color: white;
     --accent_font_color: #474447;
     --primary_button_color: rgb(35, 34, 34);
+    --skills_color: rgb(84, 240, 214);
 
 }
 
@@ -48,19 +49,20 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 3.2rem;
+    width: 3.255rem;
     height: 2rem;
     border-radius: 30px;
-    background-color: #1f1f1fbc;
+    background-color: #1f1f1f00;
     position: absolute;
     top: .5rem;
     right: 1rem;
     transition: all 0.5s ease-in;
     cursor: pointer;
     z-index: 1;
+    border: 1.1px var(--primary_font_color) solid;
   }
   
-  /* Making a dot switch inside the Toggle Button */
+
   #toggle::before {
     content: "";
     width: 1.5rem;
@@ -77,7 +79,7 @@ body {
   
   /* Changing toggle button background when checked */
   #toggle:checked {
-    background: rgba(255, 255, 255, 0.675);
+    background: rgba(255, 255, 255, 0);
   }
   
   /* Changing dot switch color and moving to the right side when checked */
@@ -89,7 +91,43 @@ body {
 
 
 
+  .mouse {
+	width: 2rem;
+	height: 5rem;
+	border: 2px solid #333;
+	border-radius: 60px;
+	position: absolute;
+    left: 1%;
+    top: 85%;
+	&::before {
+		content: '';
+		width: 0.8rem;
+		height: 0.8rem;
+		position: absolute;
+		top: 0.7rem;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: var(--primary_font_color);
+		border-radius: 50%;
+		opacity: 1;
+		animation: wheel 2s infinite;
+		-webkit-animation: wheel 2s infinite;
+	}
+}
 
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 3.75rem;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 3.75rem;
+	}
+}
 
 .main_section {
     background-color: var(--primary_dark_color);
@@ -99,8 +137,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
 }
 
 .name_container {
@@ -120,7 +156,6 @@ body {
     font-size: 1.7rem;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 .button_container {
@@ -155,8 +190,8 @@ body {
 .profile_section {
     width: 100%;
     height: fit-content;
-    background-color: var(--primary_dark_color);
-    margin: 2rem 0
+    background-color: transparent;
+    margin: 0
 }
 
 .profile_container {
@@ -186,7 +221,7 @@ body {
 .about_me_container {
     display: block;
     margin: 3rem 0;
-    color: var(--primary_font_color)smoke;
+    color: var(--primary_font_color);
     width: 100%
     
 }
@@ -196,8 +231,6 @@ body {
     font-family: 'Ubuntu', sans-serif;
     margin: 1rem;
     color: var(--primary_font_color);
-
-
 }
 
 .about_me_container p { 
@@ -252,6 +285,7 @@ body {
 .skill p {
     position: absolute;
     margin: 0 1rem;
+    z-index: 1;
 
 
 }
@@ -263,7 +297,7 @@ body {
 .skill_fill {
     position: relative;
     height: 2rem;
-    background-color: rgb(84, 240, 214);
+    background-color: var(--skills_color);
     border-radius: 3px;
     z-index: 1;
 }
@@ -773,6 +807,12 @@ ul {
     .skills_heading {
         width: 90%
     }
+    .main_section {
+        height: 90dvh;
+    }
+    .mouse {
+        display: none
+    }
 
  }
 
@@ -809,6 +849,12 @@ ul {
     }
     .skills_heading {
         width: 90%
+    }
+    .main_section {
+        height: 90dvh;
+    }
+    .mouse {
+        display: none
     }
  }
 

@@ -10,6 +10,7 @@ const dialog = document.querySelectorAll("[data-modal]");
 const modal_image = document.querySelector(".preview_image")
 const close_button = document.querySelectorAll(".close_button")
 const bar = document.querySelector(".scroll-indicator");
+const scrollDown = document.querySelector(".mouse")
 
 
 
@@ -17,8 +18,13 @@ window.onscroll = () => {
 	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 	let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 	let scrolled = (winScroll / height) * 100;
-	
+
+    if (winScroll >= 200) {
+        scrollDown.remove()
+    }
+
 	bar.style.width = scrolled + "%";
+    
 };
 
 
@@ -45,9 +51,9 @@ function checkboxFunction() {
         root.style.setProperty("--primary_font_color", "black");
         root.style.setProperty("--accent_font_color", "rgb(220, 220, 220)")
         root.style.setProperty("--primary_button_color", "white")
+        root.style.setProperty("--skills_color", "rgb(45, 123, 34)")
         my_picture.style.setProperty("opacity", "1")
 
-        
 
         for (let title of titles) {
             title.style.setProperty("color", "white")
@@ -62,6 +68,7 @@ function checkboxFunction() {
         root.style.setProperty("--primary_font_color", "white");
         root.style.setProperty("--accent_font_color", "#666166")
         root.style.setProperty("--primary_button_color", "black")
+        root.style.setProperty("--skills_color", "rgb(84, 240, 214)")
         main_section.style.removeProperty("background-image")
 
     }
