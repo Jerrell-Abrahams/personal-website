@@ -10,7 +10,55 @@
   --primary_font_color: white;
   --accent_font_color: #474447;
   --primary_button_color: rgb(35, 34, 34);
-  --skills_color: rgb(84, 240, 214);
+  --skills_color: #43a8e6;
+}
+
+nav {
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  position: fixed;
+  z-index: 99;
+}
+
+nav div {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.nav_button {
+  font-size: 0.7rem;
+  margin: 1rem 0.4rem;
+  color: rgb(165, 165, 165);
+  font-family: "Ubuntu";
+  text-decoration: none;
+  position: relative;
+}
+
+.nav_button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav_button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav div a:hover {
+  cursor: pointer;
+  color: gray;
 }
 
 .scroll-indicator {
@@ -20,7 +68,7 @@
   left: 0;
   width: 0%;
   height: 5px;
-  background-color: rgb(45, 123, 34);
+  background-color: #43a7e678;
 }
 
 .animate {
@@ -40,89 +88,14 @@ body {
   background-color: var(--primary_dark_color);
 }
 
-#toggle {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 3.255rem;
-  height: 2rem;
-  border-radius: 30px;
-  background-color: #1f1f1f00;
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  transition: all 0.5s ease-in;
-  cursor: pointer;
-  z-index: 1;
-}
-
-#toggle::before {
-  content: "";
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-image: url("../images/sun.png");
-  background-size: contain;
-  position: absolute;
-  top: 50%;
-  left: 2px;
-  transform: translateY(-50%);
-  transition: all 0.5s ease-in;
-}
-
-/* Changing toggle button background when checked */
-#toggle:checked {
-  background: rgba(255, 255, 255, 0);
-}
-
-/* Changing dot switch color and moving to the right side when checked */
-#toggle:checked::before {
-  background-image: url("../images/half-moon.png");
-  background-size: contain;
-  left: 1.5rem;
-}
-
-.mouse {
-  width: 2rem;
-  height: 5rem;
-  border: 2px solid #333;
-  border-radius: 60px;
-  position: absolute;
-  left: 1%;
-  top: 85%;
-  &::before {
-    content: "";
-    width: 0.8rem;
-    height: 0.8rem;
-    position: absolute;
-    top: 0.7rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--primary_font_color);
-    border-radius: 50%;
-    opacity: 1;
-    animation: wheel 2s infinite;
-    -webkit-animation: wheel 2s infinite;
-  }
-}
-
-@keyframes wheel {
-  to {
-    opacity: 0;
-    top: 3.75rem;
-  }
-}
-
-@-webkit-keyframes wheel {
-  to {
-    opacity: 0;
-    top: 3.75rem;
-  }
-}
-
 .main_section {
-  background-color: var(--primary_dark_color);
-  height: 100dvh;
+  background: rgb(31, 31, 31);
+  background: radial-gradient(
+    circle,
+    rgba(74, 74, 74, 0.452) 10%,
+    rgba(0, 0, 0, 1) 82%
+  );
+  height: 90dvh;
   width: 100%;
   background-size: cover;
   display: flex;
@@ -136,17 +109,40 @@ body {
 }
 
 .main_heading {
-  color: var(--primary_font_color);
+  background-image: -webkit-linear-gradient(bottom, #232323 5%, #ababab 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
   font-size: 6rem;
   text-align: center;
   font-family: "Barlow Condensed", sans-serif;
+  animation: pop 1.5s;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    filter: blur(5px);
+  }
+
+  100% {
+    transform: scale(1);
+    filter: blur(0);
+  }
 }
 
 .sub_heading {
-  color: gray;
+  color: #e3e3e3;
+  /* background-image: -webkit-linear-gradient(45deg, #717171 49%, #bdbdbd 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   font-size: 1.7rem;
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  animation: pop 2s;
 }
 
 .button_container {
@@ -156,24 +152,29 @@ body {
 }
 
 .resume_button {
-  background-color: #3bb78f;
-  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+  background-color: #156fa8;
+  background-image: linear-gradient(
+    to right,
+    #42455f 0%,
+    #296ba5 51%,
+    #4d517b 100%
+  );
+  background-size: 200% auto;
   font-size: 1rem;
   width: 10rem;
   height: 3rem;
   border: none;
-  color: white;
-  border-radius: 0.5rem;
+  color: rgb(238, 234, 234);
+  border-radius: 4px;
   margin: 2rem auto;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: #296ba5 1px 1px 70px;
   transition: 0.3s all;
 }
 
 .resume_button:hover {
-  background-color: #2c8f6f;
-  background-image: linear-gradient(215deg, #49d4a8 30%, #0bab64 84%);
+  background-position: right center;
   transform: translateY(1px);
-  box-shadow: rgba(231, 230, 230, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: #296ba5 1.95px 1.95px 200px;
   cursor: pointer;
 }
 
@@ -188,8 +189,22 @@ body {
   width: 90%;
   height: fit-content;
   margin: 0 auto;
-  background-color: var(--accent_dark_color);
-  border-radius: 5px;
+  background: rgb(31, 31, 31);
+  background: radial-gradient(
+    circle,
+    rgba(31, 31, 31, 1) 36%,
+    rgba(0, 0, 0, 1) 82%
+  );
+  border-radius: 1px;
+  border: 0.5px solid;
+  border-image: linear-gradient(
+      to bottom,
+      #156fa8,
+      black 30%,
+      black 60%,
+      #156fa8
+    )
+    1;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
@@ -198,7 +213,7 @@ body {
   height: 25rem;
   border-radius: 50%;
   opacity: 0.9;
-  box-shadow: rgb(83, 83, 83) 1px 1px 20px;
+  box-shadow: #000000 1px 1px 20px;
   margin: 2rem;
   transform: scale(0.9);
 }
@@ -216,16 +231,20 @@ body {
 
 .about_me_container h1,
 .skills_heading,
-.project_heading,
-.contact_heading {
+.project_heading {
   font-size: 4rem;
   font-family: "Ubuntu", sans-serif;
   margin: 1rem;
-  color: var(--primary_font_color);
+  background-image: -webkit-linear-gradient(bottom, #232323 5%, #cfcfcf 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .about_me_container p {
   font-size: 1.5rem;
+  line-height: 1.8rem;
   margin: 1rem;
   width: 75%;
   font-family: "Ubuntu", sans-serif;
@@ -239,7 +258,22 @@ body {
 }
 
 .skills_container {
-  background-color: var(--accent_dark_color);
+  background: rgb(31, 31, 31);
+  background: radial-gradient(
+    circle,
+    rgba(74, 74, 74, 0.695) 10%,
+    rgba(0, 0, 0, 1) 82%
+  );
+  border-radius: 1px;
+  border: 1px solid;
+  border-image: linear-gradient(
+      to bottom,
+      #156fa8,
+      black 30%,
+      black 60%,
+      #156fa8
+    )
+    1;
   width: 90%;
   height: fit-content;
   margin: 10rem auto;
@@ -283,7 +317,7 @@ body {
 .skill_fill {
   position: relative;
   height: 2rem;
-  background-color: var(--skills_color);
+  background-image: linear-gradient(to right, rgb(116, 116, 234), #2a8dca);
   border-radius: 3px;
   z-index: 1;
 }
@@ -293,7 +327,22 @@ body {
   width: 90%;
   height: fit-content;
   border-radius: 5px;
-  background-color: var(--accent_dark_color);
+  background: rgb(31, 31, 31);
+  background: radial-gradient(
+    circle,
+    rgba(74, 74, 74, 0.695) 20%,
+    rgba(0, 0, 0, 1) 82%
+  );
+  border-radius: 1px;
+  border: 1px solid;
+  border-image: linear-gradient(
+      to bottom,
+      #156fa8,
+      black 30%,
+      black 60%,
+      #156fa8
+    )
+    1;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   padding: 1rem 0;
 }
@@ -348,7 +397,7 @@ dialog::backdrop {
   margin: 1rem 0;
   width: 25rem;
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .tech_container {
   margin: 2rem 0;
@@ -481,6 +530,16 @@ img:hover + .project_name {
   overflow: hidden;
 }
 
+.contact_section h1 {
+  color: black;
+  font-size: 5rem;
+  font-family: "Ubuntu", sans-serif;
+  margin: 2rem 1rem;
+  font-weight: 900;
+  padding: 1rem;
+  letter-spacing: -1px;
+}
+
 .background_image {
   position: absolute;
   left: 0;
@@ -510,7 +569,7 @@ img:hover + .project_name {
   margin: 0;
   display: flex;
   justify-content: center;
-  z-index: 99;
+  z-index: 10;
   position: relative;
 }
 
@@ -518,7 +577,7 @@ img:hover + .project_name {
 .call_button {
   width: 12rem;
   height: auto;
-  padding: 1rem 1rem;
+  padding: 0.8rem 0.8rem;
   background-color: transparent;
   font-size: 1.2rem;
   color: black;

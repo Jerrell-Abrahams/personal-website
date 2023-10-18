@@ -10,7 +10,7 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lora:ital@1&family=Montserrat&family=Ubuntu&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Roboto+Condensed&family=Lora:ital@1&family=Montserrat&family=Ubuntu&display=swap"
       rel="stylesheet"
     />
 
@@ -22,23 +22,24 @@
     <script defer src="../javascript/index.js"></script>
   </head>
   <body>
-    <div class="scroll-indicator"></div>
-    <nav class="navbar">
-      <div class="theme_checkbox">
-        <input
-          type="checkbox"
-          id="toggle"
-          class="toggle_button"
-          onclick="checkboxFunction()"
-          checked
-        />
+    <nav>
+      <div>
+        <a class="nav_button" href="#main_section">HOME</a>
+        <a class="nav_button" href="#profile_section">ABOUT ME</a>
+        <a class="nav_button" href="#skills_section">SKILLS</a>
+        <a class="nav_button" href="#projects_section">PROJECTS</a>
+        <a class="nav_button" href="#contact_section">CONTACT</a>
       </div>
     </nav>
-    <section class="main_section">
+    <div class="scroll-indicator"></div>
+
+    <section class="main_section" id="main_section">
       <div>
         <div class="name_container">
           <h1 class="main_heading">Jerrell Abrahams</h1>
-          <h4 class="sub_heading">Junior Full Stack Developer</h4>
+          <h4 class="sub_heading">
+            Junior Full Stack <span class="sub_heading_span">Developer</span>
+          </h4>
           <div class="button_container">
             <a href="https://flowcv.com/resume/ljur7etg36" target="_blank"
               ><button class="resume_button">Resume</button></a
@@ -49,7 +50,7 @@
       <div class="mouse"></div>
     </section>
 
-    <section class="profile_section">
+    <section class="profile_section" id="profile_section">
       <div class="container profile_container">
         <div class="left_section">
           <img
@@ -71,7 +72,7 @@
         </div>
       </div>
     </section>
-    <section class="skills_section">
+    <section class="skills_section" id="skills_section">
       <div class="container skills_container">
         <h1 class="title skills_heading">Skills</h1>
         <div class="skills_block">
@@ -278,7 +279,7 @@
       </div>
     </dialog>
 
-    <section class="projects_section">
+    <section class="projects_section" id="projects_section">
       <div class="container projects_container">
         <h1 class="title project_heading">Projects</h1>
         <div class="card_container">
@@ -392,7 +393,7 @@
       </div>
     </section>
 
-    <section class="contact_section">
+    <section class="contact_section" id="contact_section">
       <img
         class="background_image"
         src="../images/brush_image.jpg"
